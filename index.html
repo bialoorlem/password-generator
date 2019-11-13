@@ -79,12 +79,36 @@
 
     <!--Javascript for Password Generator-->
 
+    
+
+    
+
     <script>
+
+    // <!--pseudocode-->
+
+    //Click the button
+    //stuff shows up in the console
+    
 
 function getpassword(){
 
     const generateEl = document.getElementById("generate");
-    console.log(generateEl.value)
+    console.log("You clicked me");
+    //get random letter
+   
+    
+
+    for (let i = 0; i < 8; i++){
+
+    const letters = ["a", "b", "c"]
+
+    const randomIndex = Math.floor(Math.random() * letters.length);
+
+    const password = letters[randomIndex];
+
+        console.log(password);
+    }
 
 }
 
@@ -113,7 +137,7 @@ function getlowercase(){
 
     const lowercaseEl = document.getElementById("lowercase");
     console.log(lowercaseEl.value)
-
+}
 
 function gethello(){
 
