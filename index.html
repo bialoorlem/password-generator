@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <!--Stylings-->
+<!--Stylings-->
 
 <head>
     <meta charset="UTF-8" />
@@ -14,6 +14,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lato|Playfair+Display&display=swap" rel="stylesheet">
 </head>
 <!--Body-->
+
 <body>
     <header>
         <h1>Password Generator</h1>
@@ -24,45 +25,80 @@
         <div>
             <hr class="hr">
         </div>
-   
-       
-            
-                <textarea readonly id="password" placeholder="Your Secure Password" aria-label="Generated Password" class="form-control"
-                    rows="5">
+
+
+
+        <textarea readonly id="password" placeholder="Your Secure Password" aria-label="Generated Password" class="form-control"
+            rows="5">
                     Your Secure Password
                     </textarea>
-           
-        
 
-         <div>
+
+
+        <div>
             <hr class="hr">
         </div>
 
- <div>
-    <input id="generate">
-    <button onclick="getpassword()" id="generate" class="btn btn-danger btn-lg">Generate Password</button>
-</div>
+        <div>
+            <input id="generate">
+            <button onclick="getpassword()" id="generate" class="btn btn-danger btn-lg">Generate Password</button>
+        </div>
 
- <div>
-    <input id="generate">
-    <button onclick="getpassword()" id="generate" class="btn btn-danger btn-lg">Generate Password</button>
-</div>        
-                
-            
-                <button id="copy" class="btn btn-secondary btn-lg"> 
+
+        <div>
+
+            <input id="hello" type="checkbox"> use special characters ( !@#$%^ )
+           
+        </div>
+
+                <div>
+
+            <input id="hello" type="checkbox"> use numeric characters ( 1, 2, 3, 4, 5 )
+           
+        </div>
+
+                <div>
+                    
+            <input id="hello" type="checkbox"> use lowercase characters ( a, b, c, d, e )
+           
+        </div>
+
+                <div>
+            <input id="hello" type="checkbox"> use uppercase characters ( A, B, C, D, E )
+            <div>
+                <button onclick="gethello()" id="hello" class="btn btn-danger btn-lg">Generate Password</button>
+            </div>
+        </div>
+
+
+        <button id="copy" class="btn btn-secondary btn-lg"> 
       Copy to Clipboard
     </button>
-            </div>
+    </div>
 
 
-<!--Javascript for Password Generator-->
+    <!--Javascript for Password Generator-->
 
-<script>
+    <script>
 
 function getpassword(){
 
     const generateEl = document.getElementById("generate");
     console.log(generateEl.value)
+
+}
+
+function gettest(){
+
+    const testEl = document.getElementById("test");
+    console.log(testEl.value)
+
+}
+
+function gethello(){
+
+    const helloEl = document.getElementById("hello");
+    console.log(helloEl.checked)
 
 }
 
