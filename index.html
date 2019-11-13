@@ -24,21 +24,30 @@
         <div>
             <hr class="hr">
         </div>
-
+   
        
-            <div class="form-group">
-
+            
                 <textarea readonly id="password" placeholder="Your Secure Password" aria-label="Generated Password" class="form-control"
-                    rows="5"></textarea>
-            </div>
+                    rows="5">
+                    Your Secure Password
+                    </textarea>
+           
         
 
          <div>
             <hr class="hr">
         </div>
 
-      
-                <button id="generate" class="btn btn-danger btn-lg">Generate Password</button>
+ <div>
+    <input id="generate">
+    <button onclick="getpassword()" id="generate" class="btn btn-danger btn-lg">Generate Password</button>
+</div>
+
+ <div>
+    <input id="generate">
+    <button onclick="getpassword()" id="generate" class="btn btn-danger btn-lg">Generate Password</button>
+</div>        
+                
             
                 <button id="copy" class="btn btn-secondary btn-lg"> 
       Copy to Clipboard
@@ -46,10 +55,23 @@
             </div>
 
 
+<!--Javascript for Password Generator-->
 
+<script>
+
+function getpassword(){
+
+    const generateEl = document.getElementById("generate");
+    console.log(generateEl.value)
+
+}
+
+</script>
 </body>
 
-<!--Javascript-->
+<!--Javascript from Bootstrap-->
+
+
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
