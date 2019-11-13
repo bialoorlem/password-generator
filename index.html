@@ -47,24 +47,24 @@
 
         <div>
 
-            <input id="hello" type="checkbox"> use special characters ( !@#$%^ )
+            <input id="special" type="checkbox"> use special characters ( !@#$%^ )
            
         </div>
 
                 <div>
 
-            <input id="hello" type="checkbox"> use numeric characters ( 1, 2, 3, 4, 5 )
+            <input id="numeric" type="checkbox"> use numeric characters ( 1, 2, 3, 4, 5 )
            
         </div>
 
                 <div>
                     
-            <input id="hello" type="checkbox"> use lowercase characters ( a, b, c, d, e )
+            <input id="lowercase" type="checkbox"> use lowercase characters ( a, b, c, d, e )
            
         </div>
 
                 <div>
-            <input id="hello" type="checkbox"> use uppercase characters ( A, B, C, D, E )
+            <input id="uppercase" type="checkbox"> use uppercase characters ( A, B, C, D, E )
             <div>
                 <button onclick="gethello()" id="hello" class="btn btn-danger btn-lg">Generate Password</button>
             </div>
@@ -88,12 +88,32 @@ function getpassword(){
 
 }
 
-function gettest(){
+function getspecial(){
 
-    const testEl = document.getElementById("test");
-    console.log(testEl.value)
+    const specialEl = document.getElementById("special");
+    console.log(specialEl.value)
 
 }
+
+function getnumeric(){
+
+    const numericEl = document.getElementById("numeric");
+    console.log(numericEl.value)
+
+}
+
+function getlowercase(){
+
+    const lowercaseEl = document.getElementById("lowercase");
+    console.log(lowercaseEl.value)
+
+}
+
+function getlowercase(){
+
+    const lowercaseEl = document.getElementById("lowercase");
+    console.log(lowercaseEl.value)
+
 
 function gethello(){
 
