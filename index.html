@@ -39,10 +39,7 @@
             <hr class="hr">
         </div>
 
-        <div>
-            <input id="generate">
-            <button onclick="getpassword()" id="generate" class="btn btn-danger btn-lg">Generate Password</button>
-        </div>
+
 
 
         <div>
@@ -65,9 +62,9 @@
 
                 <div>
             <input id="uppercase" type="checkbox"> use uppercase characters ( A, B, C, D, E )
-            <div>
-                <button onclick="gethello()" id="hello" class="btn btn-danger btn-lg">Generate Password</button>
-            </div>
+        <div>
+            <button id="generate" class="btn btn-danger btn-lg">Generate Password</button>
+        </div>
         </div>
 
 
@@ -90,6 +87,19 @@
     //Click the button
     //stuff shows up in the console
     
+const characters = []
+
+const finalpass = []
+
+let password = {
+    length: 8, 
+    uppercase: true,
+    lowercase: false,
+    numbers: true,
+    special: false
+
+
+}   
 
 function getpassword(){
 
@@ -101,7 +111,7 @@ function getpassword(){
 
     for (let i = 0; i < 8; i++){
 
-    const letters = ["a", "b", "c"]
+    const letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 
     const randomIndex = Math.floor(Math.random() * letters.length);
 
@@ -112,6 +122,18 @@ function getpassword(){
 
 }
 
+function getvalues(){
+const specialEl = document.getElementById("special").checked;
+
+    if (specialEl) {
+
+        console.log("specialEl")
+
+    }
+       console.log(specialEl) 
+}
+getvalues()
+
 function getspecial(){
 
     const specialEl = document.getElementById("special");
@@ -119,17 +141,10 @@ function getspecial(){
 
 }
 
-function getnumeric(){
+function getnumbers(){
 
-    const numericEl = document.getElementById("numeric");
-    console.log(numericEl.value)
-
-}
-
-function getlowercase(){
-
-    const lowercaseEl = document.getElementById("lowercase");
-    console.log(lowercaseEl.value)
+    const numbersEl = document.getElementById("numbers");
+    console.log(numbersEl.value)
 
 }
 
@@ -137,14 +152,17 @@ function getlowercase(){
 
     const lowercaseEl = document.getElementById("lowercase");
     console.log(lowercaseEl.value)
-}
-
-function gethello(){
-
-    const helloEl = document.getElementById("hello");
-    console.log(helloEl.checked)
 
 }
+
+function getuppercase(){
+
+    const uppercaseEl = document.getElementById("uppercase");
+    console.log(uppercaseEl.value)
+}
+
+const mybutton = document.getElementById("generate");
+mybutton.addEventListener("click", getvalues);
 
 </script>
 </body>
