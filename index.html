@@ -40,11 +40,9 @@
         </div>
 
 
-
-
         <div>
 
-            <input id="special" type="checkbox"> use special characters ( !@#$%^ )
+            <input id="lowercase" type="checkbox"> use lowercase characters ( a, b, c, d, e )
 
         </div>
 
@@ -56,9 +54,10 @@
 
         <div>
 
-            <input id="lowercase" type="checkbox"> use lowercase characters ( a, b, c, d, e )
+            <input id="special" type="checkbox"> use special characters ( !@#$%^ )
 
         </div>
+
 
         <div>
             <input id="uppercase" type="checkbox"> use uppercase characters ( A, B, C, D, E )
@@ -90,9 +89,9 @@
     
 const characters = []
 
-const finalpass = []
+const finalPass = []
 
-const uppercases = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+
 
 
 
@@ -123,11 +122,14 @@ let password = {
 
 function getLower(){
 
-    const generateEl = document.getElementById("generate").checked;
-    console.log("You clicked me");
+    const isChecked = document.getElementById("lowercase").checked;
+    console.log("You clicked me", isChecked);
+    //dropped lowercaseEl in there
     //get random letter
    
-    
+//you can pass isChecked into a function
+
+//figure out how to take the isChecked info and apply it to the code    
 
     for (let i = 0; i < 2; i++){
 
@@ -151,8 +153,8 @@ function getLower(){
 
 function getNumber(){
 
-    const numericEl = document.getElementById("generate").checked;
-    console.log("You clicked number");
+    const isChecked = document.getElementById("generate").checked;
+    console.log("You clicked number", isChecked);
     //get random number
    
     
@@ -176,8 +178,8 @@ function getNumber(){
 
 function getSpecial(){
 
-    const specialEl = document.getElementById("generate").checked;
-    console.log("You clicked special");
+    const isChecked = document.getElementById("generate").checked;
+    console.log("You clicked special", isChecked);
     //get random special
    
     
@@ -201,8 +203,8 @@ function getSpecial(){
 
 function getUpper(){
 
-    const upperEl = document.getElementById("generate").checked;
-    console.log("You clicked upper");
+    const isChecked = document.getElementById("generate").checked;
+    console.log("You clicked upper", isChecked);
     //get random upper
    
     
@@ -234,14 +236,14 @@ const getPasswordx = [getLower(), getNumber(), getSpecial(), getUpper()];
 
 const randomPassword = Math.floor(Math.random() * getPasswordx);
 
-console.log("weoeoeooooooo");
+console.log("This logged")
 
 console.log(randomPassword);
 
 }
 
 }
-getPassword()
+// getPassword()
 
 //Next thing to do: Create an array to push the password into
 
