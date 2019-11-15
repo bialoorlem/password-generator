@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <!--Stylings-->
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,87 +12,65 @@
     <link href="https://fonts.googleapis.com/css?family=Lato|Playfair+Display&display=swap" rel="stylesheet">
 </head>
 <!--Body-->
-
 <body>
     <header>
         <h1>Password Generator</h1>
     </header>
     <div class="container">
         <h2>Generate a Password</h2>
-
         <div>
             <hr class="hr">
         </div>
-
-
-
         <textarea readonly id="password" placeholder="Your Secure Password" aria-label="Generated Password" class="form-control"
             rows="5">
                     Your Secure Password
                     </textarea>
-
-
-
         <div>
             <hr class="hr">
         </div>
-
-
+​
+​
+​
+​
         <div>
-
-            <input id="lowercase" type="checkbox"> use lowercase characters ( a, b, c, d, e )
-
-        </div>
-
-        <div>
-
-            <input id="numeric" type="checkbox"> use numeric characters ( 1, 2, 3, 4, 5 )
-
-        </div>
-
-        <div>
-
+​
             <input id="special" type="checkbox"> use special characters ( !@#$%^ )
-
+            <input id="lowercase" type="checkbox"> use lowercase characters ( a, b, c, d, e )
+​
         </div>
-
-
+​
+        <div>
+            <input id="numeric" type="checkbox"> use numeric characters ( 1, 2, 3, 4, 5 )
+        </div>
+​
+        <div>
+​
+            <input id="lowercase" type="checkbox"> use lowercase characters ( a, b, c, d, e )
+            <input id="special" type="checkbox"> use special characters ( !@#$%^ )
+​
+        </div>
+​
+​
         <div>
             <input id="uppercase" type="checkbox"> use uppercase characters ( A, B, C, D, E )
             <div>
                 <button onclick="getPassword()" id="generate" class="btn btn-danger btn-lg">Generate Password</button>
             </div>
         </div>
-
-
         <button id="copy" class="btn btn-secondary btn-lg"> 
       Copy to Clipboard
     </button>
     </div>
-
-
     <!--Javascript for Password Generator-->
-
-
-
-
-
     <script>
-
-
     // <!--pseudocode-->
-
     // Click the button
     // stuff shows up in the console
     
 const characters = []
-
+const finalpass = []
 const finalPass = []
-
-
-
-
-
+const uppercases = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 let password = {
     length: 8, 
     uppercase: true,
@@ -102,165 +78,100 @@ let password = {
     numbers: true,
     special: true
 }   
-
     
-
 // function generate(){
-
 // console.log(characters);
-
 //     if (true){
 //         characters = uppercase.concat(characters);
         
 // }       console.log(characters);
-
 // }
 //     generate();
-
-
-
-
 function getLower(){
-
+    const generateEl = document.getElementById("generate").checked;
+    console.log("You clicked me");
     const isChecked = document.getElementById("lowercase").checked;
     console.log("You clicked me", isChecked);
     //dropped lowercaseEl in there
     //get random letter
    
+    
 //you can pass isChecked into a function
-
 //figure out how to take the isChecked info and apply it to the code    
-
     for (let i = 0; i < 2; i++){
-
     const lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-
     const randomIndex = Math.floor(Math.random() * lowercase.length);
-
     const password = lowercase[randomIndex];
-
     console.log("this part is working");
-
     console.log(password);
-
     }
-
 }
-
-
-
-
-
 function getNumber(){
-
+    const numericEl = document.getElementById("generate").checked;
+    console.log("You clicked number");
     const isChecked = document.getElementById("generate").checked;
     console.log("You clicked number", isChecked);
     //get random number
    
     
-
     for (let i = 0; i < 2; i++){
-
     const numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
-
     const randomIndex = Math.floor(Math.random() * numbers.length);
-
     const password = numbers[randomIndex];
-
     console.log("this part is working");
-
     console.log(password);
-
     }
-
 }
-
-
 function getSpecial(){
-
+    const specialEl = document.getElementById("generate").checked;
+    console.log("You clicked special");
     const isChecked = document.getElementById("generate").checked;
     console.log("You clicked special", isChecked);
     //get random special
    
     
-
     for (let i = 0; i < 2; i++){
-
-    const special = ["!", "#", "$", "%", "&", "‘", "(", ")", "*", "+", "-", ".", "/", ":", ";", "=", "?", "@", "^", "_", "{", "|", "}"]
-
+    const special = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", "-", ".", "/", ":", ";", "=", "?", "@", "^", "_", "{", "|", "}"]
     const randomIndex = Math.floor(Math.random() * special.length);
-
     const password = special[randomIndex];
-
     console.log("this part is working");
-
     console.log(password);
-
     }
-
 }
-
-
 function getUpper(){
-
+    const upperEl = document.getElementById("generate").checked;
+    console.log("You clicked upper");
     const isChecked = document.getElementById("generate").checked;
     console.log("You clicked upper", isChecked);
     //get random upper
    
     
-
     for (let i = 0; i < 2; i++){
-
     const upper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-
     const randomIndex = Math.floor(Math.random() * upper.length);
-
     const password = upper[randomIndex];
-
     console.log("this part is working");
-
     console.log(password);
-
     }
-
 }
-
-
-
-
 function getPassword() {
-
 for (let i = 0; i < 4; i++){
-
 const getPasswordx = [getLower(), getNumber(), getSpecial(), getUpper()];
-
 const randomPassword = Math.floor(Math.random() * getPasswordx);
-
 console.log("This logged")
-
 console.log(randomPassword);
-
 }
-
 }
+getPassword()
 // getPassword()
-
 //Next thing to do: Create an array to push the password into
-
 //Push the array onto the webpage
-
 //Properly shuffe the array before displaying onto website
-
-
 for (let i = generatedPasswordArray.length; i < pwLength; i++) {
                                     generatedPasswordArray.push(allCharacters[Math.floor(Math.random() * allCharacters.length)])
                                 }
                                 console.log(generatedPasswordArray);
-
-
-
 generatedPasswordArray.push(ucLetters[Math.floor(Math.random() * ucLetters.length)])
-
 function shuffle(a) {
     var j, x, i;
     for (i = a.length - 1; i > 0; i--) {
@@ -271,88 +182,15 @@ function shuffle(a) {
     }
     return a;
 }
-
 shuffle(getPassword)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function getvalues(){
-// const specialEl = document.getElementById("special").checked;
-
-//     if (specialEl) {
-
-//         console.log("specialEl")
-
-//     }
-//        console.log(specialEl) 
-// }
-// getvalues()
-
-// // function makeid(length) {
-// //    const result           = '';
-// //    const characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-// //    const charactersLength = characters.length;
-// //    for ( const i = 0; i < length; i++ ) {
-// //       result += characters.charAt(Math.floor(Math.random() * charactersLength));
-// //    }
-// //    return result;
-// // }
-
-// // console.log(makeid(8));
-
-// function getspecial(){
-
-//     const specialEl = document.getElementById("special");
-//     console.log(specialEl.value)
-
-// }
-
-// function getnumbers(){
-
-//     const numbersEl = document.getElementById("numbers");
-//     console.log(numbersEl.value)
-
-// }
-
-// function getlowercase(){
-
-//     const lowercaseEl = document.getElementById("lowercase");
-//     console.log(lowercaseEl.value)
-
-// }
-
-// function getuppercase(){
-
-//     const uppercaseEl = document.getElementById("uppercase");
-//     console.log(uppercaseEl.value)
-// }
-
-// const mybutton = document.getElementById("generate");
-// mybutton.addEventListener("click", getvalues);
 
 </script>
 </body>
-
 <!--Javascript from Bootstrap-->
-
-
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
     crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
-
 </html>
